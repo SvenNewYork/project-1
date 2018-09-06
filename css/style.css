@@ -21,6 +21,7 @@ body, html {
 /*
 css for the top header h1 Sven Thönelt -----------------------------------------------------------
 */
+/* header can be deleted when the layout is changed to no header - text is in the nav bar */
 
 .header-h1 {
     margin: 20px;
@@ -43,120 +44,54 @@ h1 {
 }
 
 h2 {
-    margin: 20px;
-    padding: 0; 
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px; 
     text-align: left;
     font-size: 2.5em;
     font-family: 'Permanent Marker', cursive; /* Google Font */
 }
 
 h3 {
-    margin: 20px;
-    padding: 0; 
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    margin-top: 5px;
     text-align: left;
     font-size: 2em;
     font-family: 'Permanent Marker', cursive; /* Google Font */
 }
 
+h4 {
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    text-align: left;
+    font-size: 1.5em;
+    font-family: 'Permanent Marker', cursive; /* Google Font */
+}
+
 p {
-    margin: 20px;
-    padding: 0; 
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
     text-align: justify;
     font-size: 1em;
     font-family: 'Permanent Marker', cursive; /* Google Font */
 }
 
-/*
-css rotation of the The World.gif animation ---------------------------------------------------
-*/
 
-.the-world-gif {
-    -ms-transform: rotate(23.4deg); /* IE 9 */
-    -webkit-transform: rotate(23.4deg); /* Safari 3-8 */
-    transform: rotate(23.4deg);
-}
-
-
-
-/* TEST FLEXBOX !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-------------------------------------------------------------------------------*/
-
-.flex-container {
-    display: flex;
-    flex-direction: column;
-    border-radius: 15px;
-    margin: auto;
-    background-color: #778899;
-    margin-bottom: 20px;
-}
-/* flexbox container index.html */
-
-.flex-container-index {
-    display: flex;
-    flex-direction: column;
-    border-radius: 20px;
-    margin: auto;
-    background-color: #f9f9f9;
-    margin-bottom: 20px;
-    border: solid 5px #2f4f4f;
-}
-
-.index-gallerie {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    width: 100%;
-    margin: auto;
-    background-color: #2f4f4f;
-    
-}
-
-/* Flexbox the-world.html */
-
-
-.land {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: auto;
-    margin-bottom: 20px;
-    border-radius: 20px;
-    background-color: #f9f9f9;
-    border: solid 5px #2f4f4f;
-}
-
-.article-land {
-    flex-direction: column;
-    justify-content: space-around;
-    /*border: solid 2px red;*/
-    width: 100%;
-    margin: auto;
-    background-color: #f9f9f9;
-}
-
-.aricle-land-photos {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    /*border: solid 1px blue;*/
-    width: 100%;
-    margin: auto;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border: solid 5px #2f4f4f;
-    background-color: #2f4f4f;
-}
-
-/*
-css for the navigation bar ---------------------------------------------------------------
-*/
+/* css for the navigation bar ! ---------------------------------------------------------- */
 
 .nav-bar-level-1 {
     /* Attributs for the Nav bar background */
     list-style-type: none;
     margin: 0px;
     margin-bottom: 20px;
+    margin-top: 20px; /* TEST for website without header ------ */
     padding: 0px;
     overflow: hidden;
     background-color: #2f4f4f;
@@ -168,7 +103,12 @@ css for the navigation bar -----------------------------------------------------
     float: left;
 }
 
-li a, .dropbtn {
+.nav-bar-level-1 li:last-child {
+    /* controls the links in the nav bar */
+    float: right;
+}
+
+nav a, .dropbtn {
     display: inline-block;
     color: #f9f9f9;
     text-align: left;
@@ -181,7 +121,7 @@ li a, .dropbtn {
 
 /* hover over function for the navigation bar */
 
-li a:hover, .dropdown:hover .dropbtn {
+nav a:hover, .dropdown:hover .dropbtn {
     background-color: #f9f9f9;
     color: #000000;
 }
@@ -227,6 +167,94 @@ li.dropdown {
     /* Rectangle which opened by hover with the mouse */
     display: block;
     border-radius: 15px;
+}
+
+/* Flexboxes for the different sites !------------------------------------------------- */
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    margin: auto;
+    background-color: #778899;
+}
+/* flexbox container index.html */
+
+.flex-container-index {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    /* TEST -------
+    border-radius: 20px;
+    margin: auto;
+    background-color: #f9f9f9;
+    
+    border: solid 5px #2f4f4f;
+    */
+}
+
+.index-gallerie {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-radius: 20px;
+    width: 100%;
+    margin: auto;
+    background-color: #2f4f4f; 
+}
+
+.index-text {
+    border-radius: 20px;
+    margin: auto;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+    border: solid 5px #2f4f4f;    
+}
+
+.Name-nowrap {
+    white-space: nowrap;
+}
+
+/* Flexbox the-world.html */
+
+.land {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    background-color: #f9f9f9;
+    border: solid 5px #2f4f4f;
+}
+
+.article-land {
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    margin: auto;
+    background-color: #f9f9f9;
+}
+
+.aricle-land-photos {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    margin: auto;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border: solid 5px #2f4f4f;
+    background-color: #2f4f4f;
+}
+
+/* css rotation of the The World.gif animation ----------------------------------------- */
+
+.the-world-gif {
+    -ms-transform: rotate(23.4deg); /* IE 9 */
+    -webkit-transform: rotate(23.4deg); /* Safari 3-8 */
+    transform: rotate(23.4deg);
+    vertical-align:top;
 }
 
 /* CSS for Picture on index-html - with hover over effect */
@@ -299,6 +327,10 @@ div.discription {
 
 /* spezial class gallery-more-goals for the section more goals on the-world.html */
 
+#more-goals > .flex-container {
+    margin-bottom: 0px;  /* This is to control the margin at the end of the main */
+}
+
 div.gallery-more-goals {
     border: 5px solid #f9f9f9;
     background-color: #f9f9f9;
@@ -315,13 +347,363 @@ div.gallery-more-goals img {
     border-radius: 15px 15px 0px 0px;
     }
 
-/* CSS Footer Flexbox */
+
+/* Flexbox for the New York.html ---------------------------------------------------- */
+
+/* Section Life */
+
+.normal-link {
+    padding: 0px;
+    margin: 0px;
+    color: blue;
+}
+
+.flex-container-NY-head {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    background-color: #f9f9f9;
+    border: solid 5px #2f4f4f;
+}
+
+.NY-head-picture {
+    border-radius: 15px;
+    height: 20vw;
+    background-image: url(../images/new-york/life/skyline/1.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.flex-container-NY-life {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    background-color: #778899;
+}
+
+.NY-life-text {
+    background-color: #f9f9f9;
+    border: solid 5px #2f4f4f;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.NY-life-LIC {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+    background-color: #f9f9f9;
+    border: solid 5px #2f4f4f;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.NY-life-LIC-TEXT {
+    background-color: #f9f9f9;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    flex: 5;
+}
+
+.NY-life-LIC-picture {
+    flex: 1;
+    width: 100%;
+    margin: auto;
+    background-color: #2f4f4f;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+   /* border: solid 5px green; */
+    
+}
+
+.LIC-picture {
+    height: 40vw;
+    width: 40vw;
+    background-image: url(../images/new-york/life/long-island-city/1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: solid 5px #f9f9f9;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+.NY-life-faves {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    background-color: #f9f9f9;
+    border: solid 5px #2f4f4f;
+    border-radius: 15px;
+}
+.NY-life-faves-text {
+    background-color: #f9f9f9;
+    border-radius: 15px;
+}
+
+.NY-life-faves-picture {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 2;
+    background-color: #2f4f4f;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.faves-picture img {
+    height: auto;
+    width: 100%;
+    flex: 1;
+    background-color: #2f4f4f;
+    border: solid 5px #f9f9f9;
+    border-radius: 15px;
+}
+
+/* Section Job */
+
+.flex-container-NY-job {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+.NY-job-text {
+    background-color: #f9f9f9;
+    border: solid 5px #2f4f4f;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.NY-job-heli {
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    border: solid 5px #2f4f4f;
+    border-radius: 15px;
+}
+
+.NY-job-heli-TEXT {
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    flex: 3;
+}
+
+.NY-job-heli-picture {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 2;
+    background-color: #2f4f4f;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.heli-picture img {
+    height: auto;
+    width: 100%;
+    flex: 1;
+    background-color: #2f4f4f;
+    border: solid 5px #f9f9f9;
+    border-radius: 15px;
+}
+ 
+/* Job Gold */
+
+.NY-job-gold {
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    border: solid 5px #2f4f4f;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+.NY-job-gold-text {
+    background-color: #f9f9f9;
+    border-radius: 15px;
+}
+
+.NY-job-gold-picture {
+    display: flex;
+    background-color: #2f4f4f;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.NY-job-gold-picture-1 {
+    background-image: url("../images/new-york/jobs/02-gold/gold_barren.jpg");
+    background-color: #778899;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: solid 5px #f9f9f9;
+    border-radius: 15px;
+    height: 20vw;
+    width: 100%;
+    margin: 10px;
+}
+
+/* New York Courses 3D */
+
+.flex-container-NY-courses {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 20px;
+    /*
+    border-radius: 22px;
+    border: solid 5px #2f4f4f;
+    */
+}
+
+.NY-courses-text {
+    background-color: #f9f9f9;
+    border: solid 5px #2f4f4f;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.NY-courses-3D {
+    display: flex;
+    flex-direction: column;
+    background-color: #2f4f4f;
+    border: solid 5px #2f4f4f;
+    border-radius: 15px;
+}
+
+.NY-courses-3D-TEXT {
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    
+}
+
+.NY-courses-3D-TEXT-program {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #2f4f4f;
+    border: solid 5px #2f4f4f;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.NY-courses-3D-TEXT-program div {
+    flex: 1; 
+}
+
+
+.NY-courses-3D-projects {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.NY-courses-3D-projects-all {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #2f4f4f;
+    width: 100%;
+}
+
+.text-3D {
+    flex: 3;
+    background-color: #f9f9f9;
+    border: solid 5px #f9f9f9;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.picture-3D {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    background-color: #2f4f4f;
+    border: solid 5px #2f4f4f;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+div.picture-3D img {
+    border: solid 5px #f9f9f9;
+    border-radius: 15px;
+}
+
+/* New York Courses REVIT */
+
+.NY-courses-revit {
+    display: flex;
+    flex-direction: column;
+    border: solid 5px #2f4f4f;
+    margin-top:20px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+}
+.NY-courses-revit-text {
+    background-color: #f9f9f9;
+    border: solid 5px #f9f9f9;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.NY-courses-revit-text-classes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+    background-color: #2f4f4f;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.NY-courses-revit-text-classes div {
+    flex: 1;
+}
+
+.NY-courses-revit-picture {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: #2f4f4f;
+    margin: auto;
+}
+
+.revit-picture img {
+    height: auto;
+    width: 100%;
+    flex: 1;
+    background-color: #2f4f4f;
+    border: solid 5px #f9f9f9;
+    border-radius: 15px;
+}
+
+/* CSS Footer Flexbox --------------------------------------------------------------- */
 
 .footer-container {
     display: flex;
     flex-direction: column;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     padding-left: 20px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -333,10 +715,11 @@ div.gallery-more-goals img {
 .footer-link-one a {
     color: #f9f9f9;
     text-align: left;
-    padding: 5px;
     text-decoration:none;
     font-size: 1.2em;
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Permanent Marker', cursive;    
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .footer-link-extra a {
@@ -345,7 +728,8 @@ div.gallery-more-goals img {
     font-size: 1.2em;
     font-family: 'Permanent Marker', cursive;
     padding-right: 20px;
-    width: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .footer-link-two a {
@@ -353,8 +737,14 @@ div.gallery-more-goals img {
     text-decoration:none;
     font-size: 1em;
     font-family: 'Permanent Marker', cursive;
-    padding: 20px;
-    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.footer-link-two a:hover , .footer-link-extra a:hover , .footer-link-one a:hover {
+    color: black;
 }
 
 .footer-container-two {
@@ -373,7 +763,7 @@ div.gallery-more-goals img {
     align-items: center;
 }
 
-/* CSS for media divises and screen .responsive is a class on the Site "The World" picture! */
+/* CSS for media divises and screen .responsive is a class for the picture! ------------ */
 
 .responsive {
     padding: 0 15px;
@@ -396,14 +786,139 @@ div.gallery-more-goals img {
         width: 50%;
         margin: 10px 0;
     }
+    
+    div.picture-3D img {
+        width: 100%;
+    }
+        .header-h1 {
+    font-size: 2em;
+    }
+    
+    h1 {
+    font-size: 2em;
+    }
+    
+    h2 {
+    font-size: 1.7em;
+    }
+    
+    h3 {
+    font-size: 1.4em;
+    }
+    
+    h4 {
+    font-size: 1em;
+    }
+    
+    p {
+     font-size: 0.7em;
+    }
+    
+    nav a, .dropbtn {
+    font-size: 1.4em;
+    }
+    
+    .nav-bar-level-2 a {
+    font-size: 0.85em;
+    }
+    
+    .index-image-text {
+    font-size: 1.4em;
+    }
+    
+    div.discription {
+    font-size: 0.7em;
+    }
+    
+    .clearfix {
+    overflow: auto;
+    }
+    
 }
 
 @media only screen and (max-width: 500px) {
     .responsive {
         width: 100%;
     }
+    
+    .text-3D {
+    order: -1;
+    flex: 4; 
+    }
+    
+    .picture-3D {
+    flex: 1;
+    }
+    
+    div.picture-3D img {
+        width: 100%;
+    }
+    
+    .clearfix {
+    overflow: auto;
+    }    
+
+    .NY-life-LIC {
+    flex-direction: column;
+    width: 100%;
+    }
+
+    .NY-life-LIC-TEXT {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    }
+
+    .NY-life-LIC-picture {
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;   
+    }
+    
+    .LIC-picture {
+    width: auto;
+    height: 75vw;
+    }
 }
 
-.clearfix {
+@media only screen and (max-width: 800px) {
+    .NY-courses-3D-projects-all {
+    flex-direction: column;
+    }
+    
+    .text-3D {
+    order: -1;
+    flex: 1; 
+    }
+    
+    .picture-3D {
+    flex-basis: 20%;
+    }
+
+    div.picture-3D img {
+    width: 100%;
+    }
+    
+    .clearfix {
     overflow: auto;
+    }
+
 }
+
+@media only screen and (max-width: 350px) {
+   
+    .text-3D {
+    order: -1; 
+    }
+    
+    .picture-3D {
+    flex-shrink: 2;
+    }
+    
+    .clearfix {
+    overflow: auto;
+    }
+}
+
+    .clearfix {
+    overflow: auto;
+    }
